@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samiullah",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-ruby-sass": "^2.1.1",
+    "susy": "^2.2.12"
+  },
+  "dependencies": {
+    "normalize-scss": "^6.0.0"
+  }
+}
