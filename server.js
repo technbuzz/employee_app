@@ -4,13 +4,14 @@ var mongojs = require('mongojs');
 var bodyParser = require('body-parser');
 
 
-var env = process.env.NODE_ENV || 'dev';
-if (env === 'dev'){
-var db = mongojs('sosa', ['sosa']);
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
-} else {
-var db = mongojs('mongodb://address:root@ds129030.mlab.com:29030/sosa', ['sosa']);
-}
+// if (env === 'dev'){
+// var db = mongojs('sosa', ['sosa']);
+
+// } else {
+var db = mongojs('mongodb://sami:khan@ds129030.mlab.com:29030/sosa', ['sosa'], { authMechanism: 'ScramSHA1' });
+// }
 
 app.use(express.static(__dirname + "/src"));
 app.use(bodyParser.json());
