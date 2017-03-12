@@ -23,7 +23,7 @@
     "angular": "^1.6.3",
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
-    "mongojs": "^1.2",
+    "mongojs": "^1.4.1",
     "normalize-scss": "^6.0.0"
   }
 }
