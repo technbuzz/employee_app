@@ -10,6 +10,10 @@ app.config(function($routeProvider){
       templateUrl: 'pages/addCountry.html',
       controller: 'countryCtrl'
     })
+    .when('/addCity',{
+      templateUrl: 'pages/addCity.html',
+      controller: 'cityCtrl'
+    })
 });
 
 

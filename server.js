@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('sosa', ['sosa']);
+// var db = mongojs('sosa', ['sosa']);
+var db = mongojs('mongodb://address:root@ds129030.mlab.com:29030/sosa', ['sosa']);
 var bodyParser = require('body-parser');
+
 
 app.use(express.static(__dirname + "/src"));
 app.use(bodyParser.json());
@@ -105,6 +107,19 @@ app.put('/countryList/:id', function(req, res){
     });
 })
 
+// Add City
+app.get('/cityList', function(req, res){
+  db.city.find(function(err, docs){
+    res.json(docs);
+  })
+})
+
+app.post('/cityList', function(req, res){
+  console.log(req.body);
+  db.city.insert(req.body, function(err, docs){
+    res.json(docs);
+  })
+})
 
 app.listen(3000);
 console.log('Server running on port 3000...');

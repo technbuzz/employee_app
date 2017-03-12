@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines":{
+    "node":"4.4.0",
+    "npm":"2.14.20"
+  },
   "author": "Samiullah",
   "license": "MIT",
   "devDependencies": {
@@ -16,6 +20,9 @@
     "susy": "^2.2.12"
   },
   "dependencies": {
-    "normalize-scss": "^6.0.0"
+    "normalize-scss": "^6.0.0",
+    "express":"^4.13.4",
+    "body-parser":"^1.15.1",
+    "mongojs":"^1.2"
   }
 }

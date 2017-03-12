@@ -1,5 +1,6 @@
 ☐ Replace Bootstrap dialog to proper angualar dialog
 ☐ Add Autofocus to the input fields
 ☐ Don't accept empty fields
+☐ Fix the for attribute for label
 
 
