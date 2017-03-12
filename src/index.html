@@ -13,11 +13,11 @@
       <div class="row">
         <div class="col-sm-12 clearfix well">
           <div class="navbar-brand pull-left">
-            <p>Employee App</p>
+            <a href="#!/" class="link">Employee App</a>
           </div>
           <nav>
             <ul class="nav nav-pills pull-right">
-              <li><a href="#">Add Country</a></li>
+              <li><a href="#!/addCountry">Add Country</a></li>
               <li><a href="#">Add City</a></li>
               <li><a href="#">Home</a></li>
               <li><a href="#">About</a></li>
@@ -28,78 +28,13 @@
     </div>
   </header>
 
-  <main ng-controller="employeeCtrl">
+  <main>
     <div class="container">
       <div class="row">
-        <div class="col-lg-push-2 col-lg-10">
-          <form class="form-horizontal"  action="">
-            <div class="form-group">
-              <label class="col-sm-2 control-label" for="name">Name</label>
-              <div class="col-sm-6">
-                <input type="text" id="name"  name="name" ng-model="newEmp.name" class="form-control">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-2 control-label" for="department">Department</label>
-              <div class="col-sm-6">
-                <input type="text" id="department" name="department" ng-model="newEmp.department" class="form-control">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-2 control-label" for="phone_number">Phone</label>
-              <div class="col-sm-6">
-                <input type="number" id="phone_number" ng-model="newEmp.phone_number" name="phone_number" class="form-control">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-2 control-label" for="age">Age</label>
-              <div class="col-sm-6">
-                <input type="text" id="age" name="age" ng-model="newEmp.age" class="form-control">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-6">
-                <input type="button" value="Submit" ng-click="addEmployee()" class="btn btn-primary">
-                <input type="button" value="Update" ng-click="update()" class="btn btn-info">
-                <input type="button" value="Clear" ng-click="clear()" class="btn">
-              </div>
-            </div>
-          </form>
-
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Department</th>
-                <th>Phone Number</th>
-                <th>Age</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-          
-              
-              <tr ng-repeat="emp in employee">
-                <td>{{emp.name}}</td>
-                <td>{{emp.department}}</td>
-                <td>{{emp.phone_number}}</td>
-                <td>{{emp.age}}</td>
-                <td><button class="btn btn-danger" ng-click="remove(emp._id)">Remove</button>
-                <button class="btn btn-warning" ng-click="edit(emp._id)">Edit</button></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="col-lg-push-2 col-lg-10" ng-view>
         </div>
       </div>
     </div>
-
-    
   </main>
   <script src="js/angular.min.js"></script>
   <script src="js/angular-route.min.js"></script>

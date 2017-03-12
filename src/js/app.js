@@ -1,6 +1,16 @@
 var app = angular.module('myApp',['ngRoute']);
 
-
+app.config(function($routeProvider){
+  $routeProvider
+    .when('/',{
+      templateUrl: 'pages/home.html',
+      controller: 'employeeCtrl'
+    })
+    .when('/addCountry',{
+      templateUrl: 'pages/addCountry.html',
+      controller: 'countryCtrl'
+    })
+});
 
 
 app.controller('employeeCtrl', ['$scope','$http', function($scope, $http){
@@ -67,3 +77,7 @@ app.controller('employeeCtrl', ['$scope','$http', function($scope, $http){
   };
   
 }]);
+
+app.controller('countryCtrl', ['$scope', function($scope){
+  $scope.title = "Country";
+}])
