@@ -1,10 +1,16 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-// var db = mongojs('sosa', ['sosa']);
-var db = mongojs('mongodb://address:root@ds129030.mlab.com:29030/sosa', ['sosa']);
 var bodyParser = require('body-parser');
 
+
+var env = process.env.NODE_ENV || 'dev';
+if (env === 'dev'){
+var db = mongojs('sosa', ['sosa']);
+
+} else {
+var db = mongojs('mongodb://address:root@ds129030.mlab.com:29030/sosa', ['sosa']);
+}
 
 app.use(express.static(__dirname + "/src"));
 app.use(bodyParser.json());
@@ -121,5 +127,5 @@ app.post('/cityList', function(req, res){
   })
 })
 
-app.listen(3000);
+app.listen(3030);
 console.log('Server running on port 3000...');
