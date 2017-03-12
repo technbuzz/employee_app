@@ -64,10 +64,10 @@ app.controller('employeeCtrl', ['$scope','$http', function($scope, $http){
 
   $scope.update = function(){
     console.log($scope.newEmp._id);
-    // $http.put('/employeeList/'+$scope.newEmp._id, $scope.newEmp)
-    //   .then(function(){
-    //     refresh();
-    //   })
+    $http.put('/employeeList/'+$scope.newEmp._id, $scope.newEmp)
+      .then(function(){
+        refresh();
+      })
 
 
   }
@@ -78,6 +78,3 @@ app.controller('employeeCtrl', ['$scope','$http', function($scope, $http){
   
 }]);
 
-app.controller('countryCtrl', ['$scope', function($scope){
-  $scope.title = "Country";
-}])
