@@ -58,21 +58,20 @@ app.controller('employeeCtrl', ['$scope','$http', function($scope, $http){
 
   $scope.edit = function(id){
     console.log(id);
-    $http.get('/employeeList/' + id)
-      .then(function(response){
-        $scope.newEmp = response.data;
-        console.log(response.data);
-        
-      });
+    $scope.editEmployee = $scope.employee.filter(function(item){
+      return item._id === id;
+    })[0];
+    console.log($scope.editEmployee);
+    
   };
 
   $scope.update = function(){
-    console.log($scope.newEmp._id);
-    $http.put('/employeeList/'+$scope.newEmp._id, $scope.newEmp)
+    console.log($scope.editEmployee._id);
+    $http.put('/employeeList/'+$scope.editEmployee._id, $scope.editEmployee)
       .then(function(){
         refresh();
       })
-
+    
 
   }
 
