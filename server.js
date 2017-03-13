@@ -10,7 +10,9 @@ var env = process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 // var db = mongojs('sosa', ['sosa']);
 
 // } else {
-var db = mongojs('mongodb://sami:khan@ds129030.mlab.com:29030/sosa', ['sosa'], { authMechanism: 'ScramSHA1' });
+// var db = mongojs('mongodb://sami:khan@ds129030.mlab.com:29030/sosa', ['sosa'], { authMechanism: 'ScramSHA1' });
+
+var db = mongojs('MONGODB_URI: mongodb://heroku_3413hb7t:hcj9rlovdbt7s5k7o5es0urmmr@ds141078.mlab.com:41078/heroku_3413hb7t', ['sosa'], { authMechanism: 'ScramSHA1' })
 // }
 
 app.use(express.static(__dirname + "/src"));
